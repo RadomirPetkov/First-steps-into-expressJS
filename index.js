@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
     res.send(`Hello world`) //Combination of res.write and res.end
 })
 
+app.get(`/download`, (req, res) => {
+    res.download(`sample.pdf`,`downloaded file`)
+})
+
 app.post(`/people/:person`, (req, res) => {
     people.push(req.params.person)
     res.send(`The following page has been visited: http://localhost:3000/people/${req.params.person}`)
